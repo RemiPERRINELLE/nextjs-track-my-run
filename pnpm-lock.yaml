@@ -26,9 +26,6 @@ importers:
       next-auth:
         specifier: ^4.24.11
         version: 4.24.11(next@15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      prisma:
-        specifier: ^6.15.0
-        version: 6.16.0(typescript@5.9.2)
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -63,6 +60,9 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.1.9(@types/react@19.1.12)
+      prisma:
+        specifier: ^6.15.0
+        version: 6.16.0(typescript@5.9.2)
       tailwindcss:
         specifier: ^4
         version: 4.1.13
