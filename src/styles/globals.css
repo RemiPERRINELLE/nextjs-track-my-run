@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typo globale plus douce */
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Classes réutilisables */
+.card {
+  @apply bg-neutral-900 rounded-xl shadow-lg p-4;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition;
+}
+
+.btn-primary {
+  @apply bg-cyan-500 text-black hover:bg-cyan-400;
+}
+
+.btn-secondary {
+  @apply bg-neutral-700 text-slate-200 hover:bg-neutral-600;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white hover:bg-red-400;
+}
+
+.input {
+  @apply bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-2 text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500;
+}
+

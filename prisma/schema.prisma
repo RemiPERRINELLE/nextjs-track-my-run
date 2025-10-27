@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int      @id @default(autoincrement())
+  public_id     String   @unique @db.Char(36)
+  email         String   @unique @db.VarChar(255)
+  pseudo        String   @unique @db.VarChar(20)
+  password_hash String   @db.VarChar(255)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  reset_password_token   String?   @unique @db.VarChar(255)
+  reset_password_expires DateTime?
+  
+  runs Run[]
+
+  @@map("users")
+}
+
+model Run {
+  id           Int      @id @default(autoincrement())
+  distance_km  Decimal  @db.Decimal(4, 1)
+  duration_sec Int
+  run_date     DateTime @db.Date
+  name         String?  @db.VarChar(100)
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  // relation avec User
+  user_id Int
+  user    User @relation(fields: [user_id], references: [id])
+
+  @@map("running_runs")
+}
+
+
