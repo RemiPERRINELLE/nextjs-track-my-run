@@ -27,7 +27,7 @@ function ResetPasswordContent() {
         setPasswordsMatchMessage(null);
         setPasswordsDismatchMessage("Les mots de passe ne correspondent pas.");
       } else {
-        setError("");
+        setPasswordsDismatchMessage("");
         setPasswordsMatchMessage("Les mots de passe correspondent.");
       }
     }
