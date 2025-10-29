@@ -6,7 +6,7 @@ import { getAuthenticatedUser } from "@/lib/auth"
     
 
 const createRunSchema = z.object({
-  name: z.string().min(1, "Le nom est requis").max(100, "Max 100 caractères"),
+  name: z.string().max(100, "Max 100 caractères").optional().or(z.literal("")),
   distance_km: z.number().positive().multipleOf(0.1),
   duration_sec: z.number().positive(),
   run_date: z.coerce.date(),

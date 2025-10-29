@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { useModal } from "@/contexts/ModalContext";
 import { useRuns } from "@/contexts/RunsContext";
 import { CalendarIcon } from "lucide-react";
@@ -26,7 +25,6 @@ export const RunForm = ({ run, title }: RunFormProps) => {
 
   const { addRunCtx, updateRunCtx, runs, setRuns } = useRuns();
 
-  const router = useRouter();
   const { closeModal } = useModal();
   const [errors, setErrors] = useState<{ nom?: string; distance?: string; duree?: string; date?: string, form? : string }>({});
 
@@ -42,11 +40,6 @@ export const RunForm = ({ run, title }: RunFormProps) => {
     const dateInput = (form.date as HTMLInputElement).value;
     const date = new Date(dateInput).toISOString();
     setErrors({});
-
-    if (!name) {
-      setErrors({ nom: "Nom de la course requis" });
-      return;
-    }
     
     if (distance < 0) {
       setErrors({ distance: "Distance invalide" });
