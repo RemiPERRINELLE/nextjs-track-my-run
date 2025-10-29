@@ -9,19 +9,19 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
 }
 
 model User {
   id            Int      @id @default(autoincrement())
-  public_id     String   @unique @db.Char(36)
-  email         String   @unique @db.VarChar(255)
-  pseudo        String   @unique @db.VarChar(20)
-  password_hash String   @db.VarChar(255)
+  public_id     String   @unique @default(uuid())
+  email         String   @unique
+  pseudo        String   @unique
+  password_hash String
   created_at    DateTime @default(now())
   updated_at    DateTime @updatedAt
-  reset_password_token   String?   @unique @db.VarChar(255)
+  reset_password_token   String?   @unique
   reset_password_expires DateTime?
   
   runs Run[]
@@ -31,10 +31,11 @@ model User {
 
 model Run {
   id           Int      @id @default(autoincrement())
-  distance_km  Decimal  @db.Decimal(4, 1)
+  distance_km  Decimal
   duration_sec Int
-  run_date     DateTime @db.Date
-  name         String?  @db.VarChar(100)
+  run_date     DateTime
+  name         String?
+
   created_at   DateTime @default(now())
   updated_at   DateTime @updatedAt
 
@@ -44,5 +45,3 @@ model Run {
 
   @@map("running_runs")
 }
-
-
