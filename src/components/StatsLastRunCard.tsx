@@ -22,7 +22,9 @@ export const StatsLastRunCard = () => {
           <p className="text-gray-300 text-sm">
             {formatDate(lastRun.date)} · {formatDuration(lastRun.totalSeconds)}
           </p>
-          <p className="text-gray-400 text-sm italic">{lastRun.name}</p>
+          {lastRun.name && (
+            <p className="text-gray-400 text-sm italic">{lastRun.name}</p>
+          )}
         </div>
       ) : (
         <p className="text-gray-400">Aucune run enregistrée</p>

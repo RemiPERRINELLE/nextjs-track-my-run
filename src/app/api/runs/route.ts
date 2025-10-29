@@ -187,7 +187,7 @@ export async function GET(req: NextRequest) {
     // Mapping pour correspondre au format front
     const runsData = runs.map(r => ({
       id: r.id,
-      name: r.name,
+      name: r.name ?? '',
       distance: r.distance_km,
       totalSeconds: r.duration_sec,
       date: r.run_date.toISOString().split("T")[0],

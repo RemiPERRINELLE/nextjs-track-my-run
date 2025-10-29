@@ -1,6 +1,6 @@
 export interface RawRun {
   id: number;
-  name: string;
+  name?: string | null;
   distance_km: string; // Decimal / string depuis la DB
   duration_sec: number;
   run_date: Date;
