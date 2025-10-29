@@ -11,6 +11,7 @@ function ResetPasswordContent() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordsMatchMessage, setPasswordsMatchMessage] = useState<string | null>(null);
+  const [passwordsDismatchMessage, setPasswordsDismatchMessage] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -24,7 +25,7 @@ function ResetPasswordContent() {
     if (pw && confirmPw) {
       if (pw !== confirmPw) {
         setPasswordsMatchMessage(null);
-        setError("Les mots de passe ne correspondent pas.");
+        setPasswordsDismatchMessage("Les mots de passe ne correspondent pas.");
       } else {
         setError("");
         setPasswordsMatchMessage("Les mots de passe correspondent.");
@@ -47,7 +48,7 @@ function ResetPasswordContent() {
     if (!token) return;
 
     if (password !== confirmPassword) {
-      setError("Les mots de passe ne correspondent pas.");
+      setPasswordsDismatchMessage("Les mots de passe ne correspondent pas.");
       return;
     }
 
@@ -105,6 +106,7 @@ function ResetPasswordContent() {
                 />
               </div>
 
+              {passwordsDismatchMessage && <p className="text-red-400 text-center">{passwordsDismatchMessage}</p>}
               {passwordsMatchMessage && <p className="text-green-400 text-center">{passwordsMatchMessage}</p>}
 
               <button
