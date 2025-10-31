@@ -47,3 +47,6 @@ next-env.d.ts
 
 # favicons
 /public/favicons
+
+# archives
+/src/app/data/fakeRuns_archive.json
