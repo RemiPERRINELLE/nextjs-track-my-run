@@ -45,11 +45,11 @@ export const RunsFilters = () => {
                     value={periodFilter}
                     onChange={handlePeriodChange}
                 >
-                    <option value="all">Toutes</option>
+                    <option value="all">Entière</option>
                     <option value="7">7 derniers jours</option>
                     <option value="30">30 derniers jours</option>
                     <option value="90">90 derniers jours</option>
-                    <option value="custom">Personnalisé</option>
+                    <option value="custom">Personnalisée</option>
                 </select>
 
                 {showCustomDate && (
@@ -96,7 +96,7 @@ export const RunsFilters = () => {
                     <option value="5">5 dernières</option>
                     <option value="10">10 dernières</option>
                     <option value="20">20 dernières</option>
-                    <option value="custom">Personnalisé</option>
+                    <option value="custom">Personnalisées</option>
                 </select>
 
                 {showCustomCount && (

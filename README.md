@@ -5,10 +5,11 @@ Stack technique :
 - Typescript
 - Vercel
 - GitHub
+- Supabase
+- Prisma
 - Tailwind CSS
-- resend
-- recharts
-- prisma
+- Resend
+- Recharts
 - Lucide-react
 - Framer-motion
 - bcryptjs
@@ -25,3 +26,8 @@ Bêta
 V1
 - Mise en production des corrections et retours
 - Lien ajouté sur le portfolio du site, le CV et LinkedIn
+
+Prochaines idées
+- Ajouter un picto (solei, nuage, pluie) pour indiquer la météo
+- Ajouter la possiblité d'indiquer le type de lieu (bitume, forêt, sable)
+- Ajouter le dénivelé
