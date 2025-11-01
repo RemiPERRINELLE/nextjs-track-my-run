@@ -23,7 +23,7 @@ export const Modal = ({ children, onClose }: ModalProps) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
     >
       <div
-        className="bg-white dark:bg-gray-800 p-6 py-12 md:rounded-2xl md:shadow-lg md:max-w-lg w-full relative h-full md:h-auto"
+        className="bg-gray-800 p-6 py-12 md:rounded-2xl md:shadow-lg md:max-w-lg w-full relative h-full md:h-auto"
         onClick={(e) => e.stopPropagation()} // empêcher la fermeture en cliquant sur le contenu
       >
         {/* bouton close */}
