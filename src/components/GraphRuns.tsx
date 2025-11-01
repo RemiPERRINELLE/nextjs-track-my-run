@@ -14,7 +14,7 @@ export const GraphRuns = () => {
           :
           <div className="w-full h-64">
             <div className="w-full h-64">
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height="100%" className="-ml-[20px]">
                 <LineChart data={reverseRuns(filteredRuns)}>
                   <CartesianGrid stroke="#27272a" />
                   <XAxis dataKey="date" stroke="#9ca3af" dy={10} tickFormatter={(v) => formatDate(v)} />
