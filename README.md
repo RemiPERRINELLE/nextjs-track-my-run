@@ -28,6 +28,7 @@ V1
 - Lien ajouté sur le portfolio du site, le CV et LinkedIn
 
 Prochaines idées
+- Pouvoir exporter les données
 - Ajouter un picto (solei, nuage, pluie) pour indiquer la météo
 - Ajouter la possiblité d'indiquer le type de lieu (bitume, forêt, sable)
 - Ajouter le dénivelé
